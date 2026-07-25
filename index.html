@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Open Graph Meta Tags -->
   <title>Data Science Portfolio | Dynamic Bento Grid</title>
+  <meta name="description" content="Data Science portfolio showcasing machine learning models, AI applications, and data analytics projects.">
+  <meta property="og:title" content="Alex | Data Science Portfolio">
+  <meta property="og:description" content="I build machine learning models, data dashboards, and AI-powered applications that solve real-world problems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="bitmoji.png">
+
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Google Fonts for Modern Typography -->
@@ -13,7 +21,14 @@
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
+<body data-theme="light">
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 
   <!-- Top Dynamic Nav Bar -->
   <div class="top-nav">
@@ -31,6 +46,7 @@
   <!-- Interactive Category Filters -->
   <div class="filter-container">
     <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="projects">Projects</button>
     <button class="filter-btn" data-filter="experience">Experience</button>
     <button class="filter-btn" data-filter="skills">Skills & Stack</button>
     <button class="filter-btn" data-filter="education">Edu & Certs</button>
@@ -41,13 +57,20 @@
 
     <!-- 1. Profile Picture / Bitmoji Card -->
     <div class="card avatar-card" data-category="bio">
-      <img src="bitmoji.png" alt="Alex's Bitmoji Avatar">
+      <img src="bitmoji.png" alt="Alex's Bitmoji Avatar" loading="lazy">
     </div>
 
     <!-- 2. Bio & Interests -->
     <div class="card bio-card" data-category="bio">
+      <div class="hero-heading">
+        <h1>Hi, I'm <span>Alex</span></h1>
+        <div class="typing-wrapper">
+          <span id="typing-text">Data Science Student</span>
+        </div>
+      </div>
+
       <p class="bio-text">
-        My name is <strong>Alex</strong>. I am a Data Scientist and ML Engineer with 4+ years of experience building predictive models, optimizing data pipelines, and bringing computer vision projects into production.
+        I build machine learning models, data dashboards, and AI-powered applications that solve real-world problems. Passionate about Python, analytics, automation, and intelligent systems.
       </p>
       <div class="pill-group-container">
         <span class="group-label">Interests</span>
@@ -56,6 +79,77 @@
           <span class="pill"><i class="fa-solid fa-chart-line"></i> Time Series</span>
           <span class="pill"><i class="fa-solid fa-robot"></i> LLMs & RAG</span>
         </div>
+      </div>
+    </div>
+
+    <!-- Project 1: Wardrobe Mate -->
+    <div class="card exp-card project-card" data-category="projects">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Wardrobe Mate</div>
+          <div class="card-subtitle">AI Outfit Recommendation System</div>
+        </div>
+        <span class="date-badge">2025</span>
+      </div>
+      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
+        A Streamlit-based application that analyses uploaded clothing images, extracts dominant colours using K-Means clustering, and recommends matching outfit combinations.
+      </p>
+      <div class="pills-wrapper" style="margin-top: auto;">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">PyTorch</span>
+        <span class="tech-badge">Streamlit</span>
+      </div>
+      <div class="project-actions" style="margin-top: 12px;">
+        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;" aria-label="View Wardrobe Mate GitHub Repository">
+          <i class="fa-brands fa-github"></i> Code
+        </a>
+        <a href="#" class="project-btn" style="padding: 6px 14px; font-size: 0.825rem;" aria-label="View Live Demo of Wardrobe Mate">
+          <i class="fa-solid fa-play"></i> Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="card exp-card project-card" data-category="projects">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Customer Sentiment Analyzer</div>
+          <div class="card-subtitle">NLP & BERT Fine-Tuning</div>
+        </div>
+        <span class="date-badge">2024</span>
+      </div>
+      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
+        Fine-tuned a BERT transformer model on 500k+ customer reviews to classify sentiment polarity with 92% accuracy, integrated into a real-time tracking dashboard.
+      </p>
+      <div class="pills-wrapper" style="margin-top: auto;">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Transformers</span>
+        <span class="tech-badge">FastAPI</span>
+      </div>
+      <div class="project-actions" style="margin-top: 12px;">
+        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;"><i class="fa-brands fa-github"></i> Code</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card exp-card project-card" data-category="projects">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Crypto Volatility Predictor</div>
+          <div class="card-subtitle">Time Series Forecasting</div>
+        </div>
+        <span class="date-badge">2024</span>
+      </div>
+      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
+        Implemented LSTM and ARIMA hybrid models to predict short-term cryptocurrency price volatility and automated daily alert notifications via Telegram bots.
+      </p>
+      <div class="pills-wrapper" style="margin-top: auto;">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Pandas</span>
+        <span class="tech-badge">TensorFlow</span>
+      </div>
+      <div class="project-actions" style="margin-top: 12px;">
+        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;"><i class="fa-brands fa-github"></i> Code</a>
       </div>
     </div>
 
@@ -99,10 +193,10 @@
           <span class="badge-count" id="tech-count-1">4 Skills</span>
         </div>
         <div class="pills-wrapper">
-          <span class="tech-badge bg-python">Python</span>
-          <span class="tech-badge bg-sql">SQL</span>
-          <span class="tech-badge bg-pytorch">PyTorch</span>
-          <span class="tech-badge bg-tf">TensorFlow</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">PyTorch</span>
+          <span class="tech-badge">TensorFlow</span>
         </div>
       </div>
     </div>
@@ -129,9 +223,9 @@
           <span class="badge-count" id="tech-count-2">3 Skills</span>
         </div>
         <div class="pills-wrapper">
-          <span class="tech-badge bg-aws">AWS</span>
-          <span class="tech-badge bg-docker">Docker</span>
-          <span class="tech-badge bg-git">Git</span>
+          <span class="tech-badge">AWS</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Git</span>
         </div>
       </div>
     </div>
@@ -152,10 +246,10 @@
       <div class="pill-group-container">
         <span class="group-label">Portfolio</span>
         <div class="pills-wrapper">
-          <a href="https://github.com" target="_blank" class="pill"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://kaggle.com" target="_blank" class="pill"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
-          <a href="https://linkedin.com" target="_blank" class="pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://medium.com" target="_blank" class="pill"><i class="fa-solid fa-book"></i> Medium</a>
+          <a href="https://github.com" target="_blank" class="pill" aria-label="Visit my GitHub profile"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://kaggle.com" target="_blank" class="pill" aria-label="Visit my Kaggle profile"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
+          <a href="https://linkedin.com" target="_blank" class="pill" aria-label="Visit my LinkedIn profile"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://medium.com" target="_blank" class="pill" aria-label="Read my Medium articles"><i class="fa-solid fa-book"></i> Medium</a>
         </div>
       </div>
     </div>
@@ -171,7 +265,9 @@
             <span id="email-text">alex@datascience.io</span>
             <span class="tooltip" id="copy-tooltip">Click to Copy</span>
           </button>
-          <span class="pill"><i class="fa-solid fa-globe"></i> Open to Remote</span>
+          <a href="#" class="pill primary-pill" aria-label="Download Resume (PDF)" download>
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
         </div>
       </div>
     </div>
