@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Science Portfolio | Dynamic Bento Grid</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Top Dynamic Nav Bar -->
+  <div class="top-nav">
+    <div class="status-indicator">
+      <span class="status-dot"></span>
+      <span id="availability-status">Available for hire</span>
+      <span class="divider">•</span>
+      <span id="live-time"><i class="fa-regular fa-clock"></i> Local Time: Loading...</span>
+    </div>
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- Interactive Category Filters -->
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="experience">Experience</button>
+    <button class="filter-btn" data-filter="skills">Skills & Stack</button>
+    <button class="filter-btn" data-filter="education">Edu & Certs</button>
+  </div>
+
+  <!-- Bento Grid Structure -->
+  <div class="bento-container">
+
+    <!-- 1. Profile Picture / Bitmoji Card -->
+    <div class="card avatar-card" data-category="bio">
+      <img src="bitmoji.png" alt="Alex's Bitmoji Avatar">
+    </div>
+
+    <!-- 2. Bio & Interests -->
+    <div class="card bio-card" data-category="bio">
+      <p class="bio-text">
+        My name is <strong>Alex</strong>. I am a Data Scientist and ML Engineer with 4+ years of experience building predictive models, optimizing data pipelines, and bringing computer vision projects into production.
+      </p>
+      <div class="pill-group-container">
+        <span class="group-label">Interests</span>
+        <div class="pills-wrapper">
+          <span class="pill"><i class="fa-solid fa-brain"></i> Deep Learning</span>
+          <span class="pill"><i class="fa-solid fa-chart-line"></i> Time Series</span>
+          <span class="pill"><i class="fa-solid fa-robot"></i> LLMs & RAG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Experience 1 -->
+    <div class="card exp-card" data-category="experience">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Senior Data Scientist</div>
+          <div class="card-subtitle">TechCorp AI</div>
+        </div>
+        <span class="date-badge">2022 - Present</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Built an end-to-end churn prediction pipeline improving retention by 18%.</li>
+        <li>Deployed PyTorch recommendation systems serving 2M+ active users.</li>
+        <li>Automated ETL workflows using Apache Airflow and Snowflake.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Experience 2 -->
+    <div class="card exp-card" data-category="experience">
+      <div class="card-header">
+        <div>
+          <div class="card-title">ML Engineer</div>
+          <div class="card-subtitle">DataViz Analytics</div>
+        </div>
+        <span class="date-badge">2020 - 2022</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Engineered computer vision algorithms for real-time object tracking.</li>
+        <li>Trained and fine-tuned BERT models for customer sentiment analysis.</li>
+        <li>Reduced model inference latency by 40% using TensorRT optimizations.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Core Stack -->
+    <div class="card exp-card" data-category="skills">
+      <div class="pill-group-container">
+        <div class="group-header">
+          <span class="group-label">Core Stack</span>
+          <span class="badge-count" id="tech-count-1">4 Skills</span>
+        </div>
+        <div class="pills-wrapper">
+          <span class="tech-badge bg-python">Python</span>
+          <span class="tech-badge bg-sql">SQL</span>
+          <span class="tech-badge bg-pytorch">PyTorch</span>
+          <span class="tech-badge bg-tf">TensorFlow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Education -->
+    <div class="card exp-card" data-category="education">
+      <div class="card-header">
+        <div>
+          <div class="card-title">M.S. in Data Science</div>
+          <div class="card-subtitle">Stanford University</div>
+        </div>
+        <span class="date-badge">2018 - 2020</span>
+      </div>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">
+        Specialized in Machine Learning, Statistical Modeling, and Distributed Systems.
+      </p>
+    </div>
+
+    <!-- 7. Dev & Cloud Tools -->
+    <div class="card exp-card" data-category="skills">
+      <div class="pill-group-container">
+        <div class="group-header">
+          <span class="group-label">Dev & Cloud</span>
+          <span class="badge-count" id="tech-count-2">3 Skills</span>
+        </div>
+        <div class="pills-wrapper">
+          <span class="tech-badge bg-aws">AWS</span>
+          <span class="tech-badge bg-docker">Docker</span>
+          <span class="tech-badge bg-git">Git</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Certifications -->
+    <div class="card exp-card" data-category="education">
+      <div class="card-header">
+        <div>
+          <div class="card-title">AWS Certified</div>
+          <div class="card-subtitle">Machine Learning Specialty</div>
+        </div>
+        <span class="date-badge">2023</span>
+      </div>
+    </div>
+
+    <!-- 9. Portfolio Links -->
+    <div class="card full-width" data-category="bio">
+      <div class="pill-group-container">
+        <span class="group-label">Portfolio</span>
+        <div class="pills-wrapper">
+          <a href="https://github.com" target="_blank" class="pill"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://kaggle.com" target="_blank" class="pill"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
+          <a href="https://linkedin.com" target="_blank" class="pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://medium.com" target="_blank" class="pill"><i class="fa-solid fa-book"></i> Medium</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Contact & Location -->
+    <div class="card full-width" data-category="bio">
+      <div class="pill-group-container">
+        <span class="group-label">Details</span>
+        <div class="pills-wrapper">
+          <span class="pill"><i class="fa-solid fa-location-dot"></i> San Francisco, CA</span>
+          <button class="pill copy-pill" id="copy-email-btn" data-email="alex@datascience.io">
+            <i class="fa-solid fa-envelope"></i>
+            <span id="email-text">alex@datascience.io</span>
+            <span class="tooltip" id="copy-tooltip">Click to Copy</span>
+          </button>
+          <span class="pill"><i class="fa-solid fa-globe"></i> Open to Remote</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
