@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Dynamic Local Time Bar
+
+  // Live Time
   function updateLiveTime() {
     const timeElement = document.getElementById("live-time");
     const now = new Date();
-    const options = { timeZone: "America/Los_Angeles", hour: "2-digit", minute: "2-digit", second: "2-digit" };
-    timeElement.innerHTML = `<i class="fa-regular fa-clock"></i> SF Time: ${now.toLocaleTimeString("en-US", options)}`;
+    const options = {
+      timeZone: "Asia/Kolkata",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    };
+    timeElement.innerHTML =
+      `<i class="fa-regular fa-clock"></i> Local Time: ${now.toLocaleTimeString("en-IN", options)}`;
   }
   setInterval(updateLiveTime, 1000);
   updateLiveTime();
 
-  // 2. Light / Dark Theme Switching
+  // Theme Toggle
   const themeToggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
 
@@ -17,12 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTheme = body.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     body.setAttribute("data-theme", newTheme);
-    themeToggleBtn.innerHTML = newTheme === "dark" 
-      ? '<i class="fa-solid fa-moon"></i>' 
-      : '<i class="fa-solid fa-sun"></i>';
+
+    themeToggleBtn.innerHTML =
+      newTheme === "dark"
+        ? '<i class="fa-solid fa-moon"></i>'
+        : '<i class="fa-solid fa-sun"></i>';
   });
 
-  // 3. Dynamic Bento Filter System
+  // Animated Filter System
   const filterBtns = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".card");
 
@@ -31,50 +40,96 @@ document.addEventListener("DOMContentLoaded", () => {
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const filterValue = btn.getAttribute("data-filter");
+      const filterValue = btn.dataset.filter;
 
       cards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        if (filterValue === "all" || category === filterValue || category === "bio") {
-          card.classList.remove("hidden");
+        const category = card.dataset.category;
+        const isMatch = filterValue === "all" || category === filterValue || category === "bio";
+
+        if (isMatch) {
+          card.style.display = "flex";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "scale(1) translateY(0)";
+          }, 50);
         } else {
-          card.classList.add("hidden");
+          card.style.opacity = "0";
+          card.style.transform = "scale(0.95) translateY(10px)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 400); 
         }
       });
     });
   });
 
-  // 4. Click to Copy Email Feature
+  // Copy Email
   const copyBtn = document.getElementById("copy-email-btn");
   const copyTooltip = document.getElementById("copy-tooltip");
 
-  copyBtn.addEventListener("click", () => {
-    const email = copyBtn.getAttribute("data-email");
-    navigator.clipboard.writeText(email).then(() => {
-      copyTooltip.innerText = "Copied!";
-      setTimeout(() => {
-        copyTooltip.innerText = "Click to Copy";
-      }, 2000);
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      const email = copyBtn.dataset.email;
+      navigator.clipboard.writeText(email).then(() => {
+        copyTooltip.innerText = "Copied!";
+        setTimeout(() => {
+          copyTooltip.innerText = "Click to Copy";
+        }, 2000);
+      });
     });
+  }
+
+  // Scroll Progress Bar
+  const progressBar = document.getElementById("progressBar");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + "%";
   });
 
-  // 5. Smooth 3D Card Hover & Tilt Effect
-  cards.forEach(card => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+  // Cursor Glow
+  const cursorGlow = document.getElementById("cursorGlow");
 
-      const rotateX = ((y - centerY) / centerY) * -3;
-      const rotateY = ((x - centerX) / centerX) * 3;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-    });
+  document.addEventListener("mousemove", e => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    cursorGlow.style.left = e.clientX + "px";
+    cursorGlow.style.top = e.clientY + "px";
   });
+
+  // Back to Top
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("show", window.scrollY > 400);
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Typing Effect
+  const typingText = document.getElementById("typing-text");
+
+  const roles = [
+    "Data Science Student",
+    "Python Developer",
+    "ML Enthusiast",
+    "AI Project Builder"
+  ];
+
+  let roleIndex = 0;
+
+  setInterval(() => {
+    roleIndex = (roleIndex + 1) % roles.length;
+    typingText.style.opacity = 0;
+
+    setTimeout(() => {
+      typingText.textContent = roles[roleIndex];
+      typingText.style.opacity = 1;
+    }, 300);
+
+  }, 2500);
+
 });
