@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Live Time
+  // 1. Live Time Formatting
   function updateLiveTime() {
     const timeElement = document.getElementById("live-time");
     const now = new Date();
@@ -10,13 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
       minute: "2-digit",
       second: "2-digit"
     };
-    timeElement.innerHTML =
-      `<i class="fa-regular fa-clock"></i> Local Time: ${now.toLocaleTimeString("en-IN", options)}`;
+    timeElement.innerHTML = `<i class="fa-regular fa-clock"></i> Local Time: ${now.toLocaleTimeString("en-IN", options)}`;
   }
   setInterval(updateLiveTime, 1000);
   updateLiveTime();
 
-  // Theme Toggle
+  // 2. Theme Toggle Logic
   const themeToggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
 
@@ -31,39 +30,48 @@ document.addEventListener("DOMContentLoaded", () => {
         : '<i class="fa-solid fa-sun"></i>';
   });
 
-  // Animated Filter System
+  // 3. Flawless Structural Filter System
   const filterBtns = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".filterable-card");
+  const sections = document.querySelectorAll(".data-section");
 
   filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-
-      const filterValue = btn.dataset.filter;
+      
+      const filter = btn.dataset.filter;
 
       cards.forEach(card => {
         const category = card.dataset.category;
-        const isMatch = filterValue === "all" || category === filterValue || category === "bio";
-
-        if (isMatch) {
-          card.style.display = "flex";
+        if (filter === "all" || category === filter) {
+          card.style.display = card.dataset.display || "flex";
           setTimeout(() => {
             card.style.opacity = "1";
-            card.style.transform = "scale(1) translateY(0)";
+            card.style.transform = "translateY(0)";
           }, 50);
         } else {
           card.style.opacity = "0";
-          card.style.transform = "scale(0.95) translateY(10px)";
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 400); 
+          card.style.transform = "translateY(10px)";
+          setTimeout(() => { 
+            card.style.display = "none"; 
+          }, 400);
         }
       });
+
+      setTimeout(() => {
+        sections.forEach(section => {
+          const sectionCards = Array.from(section.querySelectorAll(".filterable-card"));
+          if (sectionCards.length > 0) {
+            const hasVisible = sectionCards.some(c => c.style.display !== "none");
+            section.style.display = hasVisible ? "block" : "none";
+          }
+        });
+      }, 450);
     });
   });
 
-  // Copy Email
+  // 4. Copy Email Feature
   const copyBtn = document.getElementById("copy-email-btn");
   const copyTooltip = document.getElementById("copy-tooltip");
 
@@ -73,15 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
       navigator.clipboard.writeText(email).then(() => {
         copyTooltip.innerText = "Copied!";
         setTimeout(() => {
-          copyTooltip.innerText = "Click to Copy";
+          copyTooltip.innerText = "Copy";
         }, 2000);
       });
     });
   }
 
-  // Scroll Progress Bar
+  // 5. Scroll Progress Bar
   const progressBar = document.getElementById("progressBar");
-
   window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -89,47 +96,23 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar.style.width = progress + "%";
   });
 
-  // Cursor Glow
-  const cursorGlow = document.getElementById("cursorGlow");
-
-  document.addEventListener("mousemove", e => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    cursorGlow.style.left = e.clientX + "px";
-    cursorGlow.style.top = e.clientY + "px";
-  });
-
-  // Back to Top
-  const backToTop = document.getElementById("backToTop");
-
-  window.addEventListener("scroll", () => {
-    backToTop.classList.toggle("show", window.scrollY > 400);
-  });
-
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  // Typing Effect
+  // 6. Hero Typing Effect
   const typingText = document.getElementById("typing-text");
-
   const roles = [
     "Data Science Student",
     "Python Developer",
     "ML Enthusiast",
     "AI Project Builder"
   ];
-
   let roleIndex = 0;
 
   setInterval(() => {
     roleIndex = (roleIndex + 1) % roles.length;
     typingText.style.opacity = 0;
-
     setTimeout(() => {
       typingText.textContent = roles[roleIndex];
       typingText.style.opacity = 1;
     }, 300);
-
   }, 2500);
 
 });
