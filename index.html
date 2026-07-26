@@ -4,275 +4,274 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO & Open Graph Meta Tags -->
-  <title>Data Science Portfolio | Dynamic Bento Grid</title>
+  <!-- SEO & Meta Tags -->
+  <title>Data Science Portfolio | Premium Editorial</title>
   <meta name="description" content="Data Science portfolio showcasing machine learning models, AI applications, and data analytics projects.">
-  <meta property="og:title" content="Alex | Data Science Portfolio">
-  <meta property="og:description" content="I build machine learning models, data dashboards, and AI-powered applications that solve real-world problems.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="bitmoji.png">
-
-  <!-- Font Awesome for Icons -->
+  
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Google Fonts for Modern Typography -->
+  
+  <!-- Google Fonts: Plus Jakarta Sans for a highly polished, modern UI -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- External Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
 
-<div class="progress-bar" id="progressBar"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress-bar" id="progressBar"></div>
 
-<button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
+  <!-- FLOATING TOP NAVIGATION -->
+  <div class="nav-wrapper">
+    <nav class="top-nav">
+      <div class="nav-logo">
+        <i class="fa-solid fa-code"></i> Drew<span>.DS</span>
+      </div>
+      
+      <div class="nav-center">
+        <span class="live-time" id="live-time">Local Time: Loading...</span>
+      </div>
 
-  <!-- Top Dynamic Nav Bar -->
-  <div class="top-nav">
-    <div class="status-indicator">
-      <span class="status-dot"></span>
-      <span id="availability-status">Available for hire</span>
-      <span class="divider">•</span>
-      <span id="live-time"><i class="fa-regular fa-clock"></i> Local Time: Loading...</span>
-    </div>
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+      <div class="nav-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span> Available for hire
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </nav>
   </div>
 
-  <!-- Interactive Category Filters -->
-  <div class="filter-container">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="projects">Projects</button>
-    <button class="filter-btn" data-filter="experience">Experience</button>
-    <button class="filter-btn" data-filter="skills">Skills & Stack</button>
-    <button class="filter-btn" data-filter="education">Edu & Certs</button>
-  </div>
-
-  <!-- Bento Grid Structure -->
-  <div class="bento-container">
-
-    <!-- 1. Profile Picture / Bitmoji Card -->
-    <div class="card avatar-card" data-category="bio">
-      <img src="bitmoji.png" alt="Alex's Bitmoji Avatar" loading="lazy">
-    </div>
-
-    <!-- 2. Bio & Interests -->
-    <div class="card bio-card" data-category="bio">
-      <div class="hero-heading">
-        <h1>Hi, I'm <span>Alex</span></h1>
+  <main class="main-container">
+    
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Intelligent Data <br><span>& AI Solutions</span></h1>
         <div class="typing-wrapper">
-          <span id="typing-text">Data Science Student</span>
+          I'm Drew, a <span id="typing-text">Data Science Student</span>
+        </div>
+        <p class="hero-desc">
+          I build machine learning models, data dashboards, and AI-powered applications that solve real-world problems. Passionate about analytics, automation, and intelligent systems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        </div>
+      </div>
+      
+      <!-- Enhanced Hero Visual with Perfected Proportions -->
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="image-box">
+          <img src="bitmoji.png" alt="Alex Avatar">
+        </div>
+        <div class="floating-badge badge-1">
+          <div class="badge-icon"><i class="fa-solid fa-robot"></i></div>
+          <span>LLMs</span>
+        </div>
+        <div class="floating-badge badge-2">
+          <div class="badge-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span>Analytics</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FILTER TABS -->
+    <nav class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All Overview</button>
+      <button class="filter-btn" data-filter="projects">Projects</button>
+      <button class="filter-btn" data-filter="experience">Experience</button>
+      <button class="filter-btn" data-filter="skills">Skills & Stack</button>
+    </nav>
+
+    <!-- 3. PROMO BANNER -->
+    <section class="promo-banner">
+      <div class="banner-text">
+        <h2>Let's build data-driven solutions together!</h2>
+        <p>Turning complex datasets into actionable insights.</p>
+      </div>
+      <div class="banner-action">
+        <button class="btn btn-light copy-btn" id="copy-email-btn" data-email="dhruvnair00@gmail.com">
+          dhruvnair00@gmail.com <i class="fa-solid fa-copy"></i>
+          <span class="tooltip" id="copy-tooltip">Copy</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 4. HIGHLIGHTS / SKILLS (Horizontal Mini-Cards) -->
+    <section class="data-section" id="skills">
+      <div class="highlights-grid">
+        
+        <div class="highlight-item filterable-card" data-category="skills" data-display="flex">
+          <div class="hl-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="hl-text">
+            <h4>Core Stack</h4>
+            <p>Python, SQL, PyTorch, TensorFlow</p>
+          </div>
+        </div>
+
+        <div class="highlight-item filterable-card" data-category="skills" data-display="flex">
+          <div class="hl-icon"><i class="fa-solid fa-cloud"></i></div>
+          <div class="hl-text">
+            <h4>Dev & Cloud</h4>
+            <p>AWS, Docker, Git, Streamlit</p>
+          </div>
+        </div>
+
+        <div class="highlight-item filterable-card" data-category="skills" data-display="flex">
+          <div class="hl-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="hl-text">
+            <h4>Education</h4>
+            <p>M.S. Stanford Univ. & AWS Certified</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. PROJECTS (Vertical Grid) -->
+    <section class="data-section" id="projects">
+      <div class="section-header">
+        <h3>Featured Projects</h3>
+        <span class="view-all">Services & Models <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+      
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card filterable-card" data-category="projects" data-display="flex">
+          <div class="card-img-placeholder">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h4>Wardrobe Mate</h4>
+              <span class="date-badge">2025</span>
+            </div>
+            <p class="subtitle">AI Outfit Recommendation</p>
+            <p class="desc">A Streamlit application analyzing clothing images, extracting colors via K-Means clustering, and recommending matching outfits.</p>
+            <div class="tags">
+              <span>PyTorch</span>
+              <span>Python</span>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card filterable-card" data-category="projects" data-display="flex">
+          <div class="card-img-placeholder">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h4>Sentiment Analyzer</h4>
+              <span class="date-badge">2024</span>
+            </div>
+            <p class="subtitle">NLP & BERT Fine-Tuning</p>
+            <p class="desc">Fine-tuned a BERT transformer model on 500k+ customer reviews to classify sentiment polarity with 92% accuracy.</p>
+            <div class="tags">
+              <span>Transformers</span>
+              <span>FastAPI</span>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card filterable-card" data-category="projects" data-display="flex">
+          <div class="card-img-placeholder">
+            <i class="fa-brands fa-bitcoin"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title-row">
+              <h4>Crypto Predictor</h4>
+              <span class="date-badge">2024</span>
+            </div>
+            <p class="subtitle">Time Series Forecasting</p>
+            <p class="desc">Implemented LSTM and ARIMA hybrid models to predict short-term cryptocurrency price volatility with daily alert bots.</p>
+            <div class="tags">
+              <span>Pandas</span>
+              <span>TensorFlow</span>
+            </div>
+            <a href="#" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. EXPERIENCE (Horizontal List) -->
+    <section class="data-section" id="experience">
+      <div class="section-header">
+        <h3>Professional Experience</h3>
+        <div class="header-filters">
+          <span>Sort</span> <i class="fa-solid fa-chevron-down"></i>
         </div>
       </div>
 
-      <p class="bio-text">
-        I build machine learning models, data dashboards, and AI-powered applications that solve real-world problems. Passionate about Python, analytics, automation, and intelligent systems.
-      </p>
-      <div class="pill-group-container">
-        <span class="group-label">Interests</span>
-        <div class="pills-wrapper">
-          <span class="pill"><i class="fa-solid fa-brain"></i> Deep Learning</span>
-          <span class="pill"><i class="fa-solid fa-chart-line"></i> Time Series</span>
-          <span class="pill"><i class="fa-solid fa-robot"></i> LLMs & RAG</span>
+      <div class="experience-list">
+        
+        <!-- Exp 1 -->
+        <div class="exp-row filterable-card" data-category="experience" data-display="flex">
+          <div class="exp-visual">
+            <div class="exp-icon"><i class="fa-solid fa-building"></i></div>
+          </div>
+          <div class="exp-details">
+            <div class="exp-title-row">
+              <h4>Data Scientist</h4>
+              <span class="date-badge">2022 - Present</span>
+            </div>
+            <p class="subtitle">TechCorp AI</p>
+            <p class="desc">Built an end-to-end churn prediction pipeline improving retention by 18%. Deployed PyTorch recommendation systems serving 2M+ active users. Automated ETL workflows via Apache Airflow.</p>
+          </div>
+          <div class="exp-action">
+            <button class="icon-btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
+
+        <!-- Exp 2 -->
+        <div class="exp-row filterable-card" data-category="experience" data-display="flex">
+          <div class="exp-visual">
+            <div class="exp-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          </div>
+          <div class="exp-details">
+            <div class="exp-title-row">
+              <h4>ML Engineer</h4>
+              <span class="date-badge">2020 - 2022</span>
+            </div>
+            <p class="subtitle">DataViz Analytics</p>
+            <p class="desc">Engineered computer vision algorithms for real-time object tracking. Trained and fine-tuned BERT models for customer sentiment analysis. Reduced latency by 40% using TensorRT.</p>
+          </div>
+          <div class="exp-action">
+            <button class="icon-btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h4>Drew.DS</h4>
+        <p>Mumbai, IN</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://kaggle.com" target="_blank"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://medium.com" target="_blank"><i class="fa-solid fa-book"></i> Medium</a>
       </div>
     </div>
-
-    <!-- Project 1: Wardrobe Mate -->
-    <div class="card exp-card project-card" data-category="projects">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Wardrobe Mate</div>
-          <div class="card-subtitle">AI Outfit Recommendation System</div>
-        </div>
-        <span class="date-badge">2025</span>
-      </div>
-      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
-        A Streamlit-based application that analyses uploaded clothing images, extracts dominant colours using K-Means clustering, and recommends matching outfit combinations.
-      </p>
-      <div class="pills-wrapper" style="margin-top: auto;">
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">PyTorch</span>
-        <span class="tech-badge">Streamlit</span>
-      </div>
-      <div class="project-actions" style="margin-top: 12px;">
-        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;" aria-label="View Wardrobe Mate GitHub Repository">
-          <i class="fa-brands fa-github"></i> Code
-        </a>
-        <a href="#" class="project-btn" style="padding: 6px 14px; font-size: 0.825rem;" aria-label="View Live Demo of Wardrobe Mate">
-          <i class="fa-solid fa-play"></i> Demo
-        </a>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="card exp-card project-card" data-category="projects">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Customer Sentiment Analyzer</div>
-          <div class="card-subtitle">NLP & BERT Fine-Tuning</div>
-        </div>
-        <span class="date-badge">2024</span>
-      </div>
-      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
-        Fine-tuned a BERT transformer model on 500k+ customer reviews to classify sentiment polarity with 92% accuracy, integrated into a real-time tracking dashboard.
-      </p>
-      <div class="pills-wrapper" style="margin-top: auto;">
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">Transformers</span>
-        <span class="tech-badge">FastAPI</span>
-      </div>
-      <div class="project-actions" style="margin-top: 12px;">
-        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;"><i class="fa-brands fa-github"></i> Code</a>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="card exp-card project-card" data-category="projects">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Crypto Volatility Predictor</div>
-          <div class="card-subtitle">Time Series Forecasting</div>
-        </div>
-        <span class="date-badge">2024</span>
-      </div>
-      <p class="project-desc" style="font-size: 0.88rem; margin-top: 8px;">
-        Implemented LSTM and ARIMA hybrid models to predict short-term cryptocurrency price volatility and automated daily alert notifications via Telegram bots.
-      </p>
-      <div class="pills-wrapper" style="margin-top: auto;">
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">Pandas</span>
-        <span class="tech-badge">TensorFlow</span>
-      </div>
-      <div class="project-actions" style="margin-top: 12px;">
-        <a href="#" class="project-btn primary" style="padding: 6px 14px; font-size: 0.825rem;"><i class="fa-brands fa-github"></i> Code</a>
-      </div>
-    </div>
-
-    <!-- 3. Experience 1 -->
-    <div class="card exp-card" data-category="experience">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Senior Data Scientist</div>
-          <div class="card-subtitle">TechCorp AI</div>
-        </div>
-        <span class="date-badge">2022 - Present</span>
-      </div>
-      <ul class="bullet-list">
-        <li>Built an end-to-end churn prediction pipeline improving retention by 18%.</li>
-        <li>Deployed PyTorch recommendation systems serving 2M+ active users.</li>
-        <li>Automated ETL workflows using Apache Airflow and Snowflake.</li>
-      </ul>
-    </div>
-
-    <!-- 4. Experience 2 -->
-    <div class="card exp-card" data-category="experience">
-      <div class="card-header">
-        <div>
-          <div class="card-title">ML Engineer</div>
-          <div class="card-subtitle">DataViz Analytics</div>
-        </div>
-        <span class="date-badge">2020 - 2022</span>
-      </div>
-      <ul class="bullet-list">
-        <li>Engineered computer vision algorithms for real-time object tracking.</li>
-        <li>Trained and fine-tuned BERT models for customer sentiment analysis.</li>
-        <li>Reduced model inference latency by 40% using TensorRT optimizations.</li>
-      </ul>
-    </div>
-
-    <!-- 5. Core Stack -->
-    <div class="card exp-card" data-category="skills">
-      <div class="pill-group-container">
-        <div class="group-header">
-          <span class="group-label">Core Stack</span>
-          <span class="badge-count" id="tech-count-1">4 Skills</span>
-        </div>
-        <div class="pills-wrapper">
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">SQL</span>
-          <span class="tech-badge">PyTorch</span>
-          <span class="tech-badge">TensorFlow</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6. Education -->
-    <div class="card exp-card" data-category="education">
-      <div class="card-header">
-        <div>
-          <div class="card-title">M.S. in Data Science</div>
-          <div class="card-subtitle">Stanford University</div>
-        </div>
-        <span class="date-badge">2018 - 2020</span>
-      </div>
-      <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">
-        Specialized in Machine Learning, Statistical Modeling, and Distributed Systems.
-      </p>
-    </div>
-
-    <!-- 7. Dev & Cloud Tools -->
-    <div class="card exp-card" data-category="skills">
-      <div class="pill-group-container">
-        <div class="group-header">
-          <span class="group-label">Dev & Cloud</span>
-          <span class="badge-count" id="tech-count-2">3 Skills</span>
-        </div>
-        <div class="pills-wrapper">
-          <span class="tech-badge">AWS</span>
-          <span class="tech-badge">Docker</span>
-          <span class="tech-badge">Git</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 8. Certifications -->
-    <div class="card exp-card" data-category="education">
-      <div class="card-header">
-        <div>
-          <div class="card-title">AWS Certified</div>
-          <div class="card-subtitle">Machine Learning Specialty</div>
-        </div>
-        <span class="date-badge">2023</span>
-      </div>
-    </div>
-
-    <!-- 9. Portfolio Links -->
-    <div class="card full-width" data-category="bio">
-      <div class="pill-group-container">
-        <span class="group-label">Portfolio</span>
-        <div class="pills-wrapper">
-          <a href="https://github.com" target="_blank" class="pill" aria-label="Visit my GitHub profile"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://kaggle.com" target="_blank" class="pill" aria-label="Visit my Kaggle profile"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
-          <a href="https://linkedin.com" target="_blank" class="pill" aria-label="Visit my LinkedIn profile"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://medium.com" target="_blank" class="pill" aria-label="Read my Medium articles"><i class="fa-solid fa-book"></i> Medium</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 10. Contact & Location -->
-    <div class="card full-width" data-category="bio">
-      <div class="pill-group-container">
-        <span class="group-label">Details</span>
-        <div class="pills-wrapper">
-          <span class="pill"><i class="fa-solid fa-location-dot"></i> San Francisco, CA</span>
-          <button class="pill copy-pill" id="copy-email-btn" data-email="alex@datascience.io">
-            <i class="fa-solid fa-envelope"></i>
-            <span id="email-text">alex@datascience.io</span>
-            <span class="tooltip" id="copy-tooltip">Click to Copy</span>
-          </button>
-          <a href="#" class="pill primary-pill" aria-label="Download Resume (PDF)" download>
-            <i class="fa-solid fa-file-arrow-down"></i> Resume
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
