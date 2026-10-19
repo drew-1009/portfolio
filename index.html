@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f7ff" />
+  <meta name="description" content="A data science portfolio exploring machine learning, analytics, and thoughtful data storytelling." />
+  <title>Dhruv Nair — Data Science Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Dhruv Nair home">
+        <span class="brand-mark" aria-hidden="true">DN<span>.</span></span>
+        <span class="brand-name">Dhruv<span>Nair</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link active" href="#top">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#toolkit">Toolkit</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Toggle color theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 15.2A8.9 8.9 0 0 1 8.8 3.3 9.3 9.3 0 1 0 20.7 15.2Z"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> OPEN TO DATA OPPORTUNITIES</div>
+        <h1 id="heroTitle">Turning raw data into <span class="gradient-text">meaningful stories.</span></h1>
+        <p class="hero-description">Hey, I’m <strong>Your Name</strong> — an aspiring data scientist who enjoys finding patterns, solving messy problems, and making insights feel intuitive.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#contact">Let’s connect <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" id="resumeDownload" href="#" download>Download résumé <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-footnote"><span class="tiny-sparkle" aria-hidden="true">✳</span> Curious mind. Evidence-led decisions. Human-first design.</div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Illustrative analytics dashboard">
+        <div class="visual-glow glow-one"></div><div class="visual-glow glow-two"></div>
+        <div class="floating-note note-top"><span class="note-icon note-icon-lilac">↗</span><span><strong>Find the signal</strong><small>Beyond the noise</small></span></div>
+        <div class="dashboard-card">
+          <div class="dashboard-top"><div><span class="micro-label">INSIGHT SNAPSHOT</span><h2>Patterns in motion</h2></div><span class="more-dots" aria-hidden="true">•••</span></div>
+          <div class="chart-summary"><div><span class="micro-label">TREND INDEX</span><div class="trend-number">+24.8<span>%</span></div></div><span class="trend-badge">↗ trending</span></div>
+          <div class="chart-area">
+            <div class="chart-y-labels" aria-hidden="true"><span>100</span><span>75</span><span>50</span><span>25</span></div>
+            <svg class="line-chart" viewBox="0 0 380 170" role="img" aria-label="Decorative rising line chart">
+              <defs><linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9f8bf1" stop-opacity=".35"/><stop offset="100%" stop-color="#9f8bf1" stop-opacity="0"/></linearGradient></defs>
+              <path class="chart-grid" d="M12 20H370 M12 58H370 M12 96H370 M12 134H370" />
+              <path d="M12 137 C37 125 47 132 66 111 S98 118 117 91 S148 105 169 76 S204 92 224 61 S254 77 278 47 S311 58 331 32 S352 42 370 17 L370 160 L12 160Z" fill="url(#areaFill)"/>
+              <path class="chart-line" d="M12 137 C37 125 47 132 66 111 S98 118 117 91 S148 105 169 76 S204 92 224 61 S254 77 278 47 S311 58 331 32 S352 42 370 17" />
+              <circle cx="278" cy="47" r="5" class="chart-point"/><circle cx="370" cy="17" r="5" class="chart-point chart-point-last"/>
+            </svg>
+          </div>
+          <div class="chart-months" aria-hidden="true"><span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span></div>
+          <div class="dashboard-bottom"><span class="legend-dot"></span><span>Exploratory trend</span><span class="dashboard-bottom-note">Illustrative data</span></div>
+        </div>
+        <div class="floating-note note-bottom"><span class="note-icon note-icon-peach">✳</span><span><strong>Make it useful</strong><small>Insight → action</small></span></div>
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+      </div>
+      <a class="scroll-cue" href="#about"><span class="scroll-cue-line"></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="intro-strip" aria-label="Portfolio focus">
+      <div class="strip-inner"><span>MY SWEET SPOT</span><p>Data analysis <b>✳</b> Machine learning <b>✳</b> Data storytelling <b>✳</b> Thoughtful design</p></div>
+    </section>
+
+    <section class="section-wrap content-section about-section" id="about" aria-labelledby="aboutTitle">
+      <div class="section-heading reveal"><span class="section-kicker">A LITTLE ABOUT ME</span><h2 id="aboutTitle">I like asking <span class="serif-accent">better questions.</span></h2><p class="section-lead">The most interesting part of data isn’t the chart — it’s the decision it helps someone make.</p></div>
+      <div class="about-grid">
+        <div class="about-note reveal"><div class="quote-mark">“</div><p>I’m building my toolkit across statistics, programming, and machine learning, with a focus on projects that are clear, useful, and grounded in real questions.</p><div class="signature">— Your Name</div></div>
+        <div class="about-details reveal">
+          <div class="detail-row"><span class="detail-icon lavender-icon">⌁</span><div><h3>Explore with curiosity</h3><p>I start by understanding the context, checking the quality of the data, and asking what would make an insight genuinely useful.</p></div></div>
+          <div class="detail-row"><span class="detail-icon mint-icon">▤</span><div><h3>Build with intention</h3><p>From a clean notebook to a deployed dashboard, I aim for work that is reproducible, explainable, and easy to use.</p></div></div>
+          <div class="detail-row"><span class="detail-icon peach-icon">✳</span><div><h3>Communicate the “so what?”</h3><p>I turn analysis into a narrative people can follow — including assumptions, limitations, and practical next steps.</p></div></div>
+        </div>
+      </div>
+      <div class="stats-row reveal">
+        <div class="stat-item"><strong><span class="counter" data-count="3">0</span><span>+</span></strong><span>Areas I’m exploring</span></div>
+        <div class="stat-item"><strong><span class="counter" data-count="5">0</span><span>+</span></strong><span>Tools in my toolkit</span></div>
+        <div class="stat-item"><strong><span class="counter" data-count="100">0</span><span>%</span></strong><span>Curiosity, always</span></div>
+        <p class="stats-note">These are template counters — update them to reflect your real journey.</p>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects" aria-labelledby="projectsTitle">
+      <div class="section-wrap content-section">
+        <div class="projects-heading-row reveal"><div class="section-heading"><span class="section-kicker">SELECTED WORK</span><h2 id="projectsTitle">A few things I’m <span class="serif-accent">working on.</span></h2><p class="section-lead">A project is more than a model. It’s a question, a method, and a clear takeaway.</p></div><span class="work-count"><span class="status-dot"></span> PORTFOLIO / 01—04</span></div>
+        <div class="project-toolbar reveal"><div class="filter-group" role="group" aria-label="Filter projects by category"><button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All projects <span>04</span></button><button class="filter-button" type="button" data-filter="analytics" aria-pressed="false">Analytics</button><button class="filter-button" type="button" data-filter="machine-learning" aria-pressed="false">Machine learning</button><button class="filter-button" type="button" data-filter="nlp" aria-pressed="false">NLP</button></div><span class="filter-result" id="filterResult" aria-live="polite">Showing 4 projects</span></div>
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card project-featured reveal" data-category="analytics" data-project="retail">
+            <div class="project-art art-retail"><div class="art-window"><div class="art-window-bar"><i></i><i></i><i></i><span>retail_overview.csv</span></div><div class="retail-kpis"><div><small>REVENUE</small><b>↗</b><strong>₹ —</strong></div><div><small>ORDERS</small><b>↗</b><strong>—</strong></div><div><small>RETENTION</small><b>↗</b><strong>—%</strong></div></div><div class="retail-chart"><span style="height:25%"></span><span style="height:42%"></span><span style="height:35%"></span><span style="height:59%"></span><span style="height:48%"></span><span style="height:72%"></span><span style="height:62%"></span><span style="height:88%"></span><span style="height:76%"></span></div></div><span class="art-sticker">DATA → DECISIONS</span></div>
+            <div class="project-content"><div class="project-meta"><span>01 / ANALYTICS</span><span class="project-type">Dashboard concept</span></div><h3>Retail Sales Explorer</h3><p>Turn transactional data into a clear view of sales trends, best-selling categories, and customer behaviour.</p><div class="tag-row"><span>Python</span><span>Pandas</span><span>Power BI / Tableau</span></div><button class="project-open" type="button" data-open-project="retail">Explore case study <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project-card reveal" data-category="machine-learning" data-project="churn">
+            <div class="project-art art-churn"><div class="node-map"><span class="node node-a">Customer</span><span class="node node-b">Signals</span><span class="node node-c">Model</span><span class="node node-d">Action</span><i class="connector connector-1"></i><i class="connector connector-2"></i><i class="connector connector-3"></i><div class="node-center">ML</div></div><span class="art-label">PREDICT · UNDERSTAND · RETAIN</span></div>
+            <div class="project-content"><div class="project-meta"><span>02 / MACHINE LEARNING</span><span class="project-type">Classification</span></div><h3>Customer Churn Signals</h3><p>Investigate which customer behaviours may signal churn and compare interpretable classification models.</p><div class="tag-row"><span>Scikit-learn</span><span>EDA</span><span>Model evaluation</span></div><button class="project-open" type="button" data-open-project="churn">Explore case study <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project-card reveal" data-category="nlp" data-project="sentiment">
+            <div class="project-art art-sentiment"><div class="sentiment-paper"><span class="paper-caption">VOICE OF THE CUSTOMER</span><div class="text-line w-85"></div><div class="text-line w-67"></div><div class="text-line w-78"></div><div class="sentiment-chips"><span>positive</span><span>neutral</span><span>negative</span></div><div class="sentiment-bars"><i style="height:72%"></i><i style="height:45%"></i><i style="height:26%"></i></div></div><span class="sentiment-spark">✳</span></div>
+            <div class="project-content"><div class="project-meta"><span>03 / NLP</span><span class="project-type">Text analysis</span></div><h3>Review Sentiment Lab</h3><p>Explore customer reviews, clean text, and compare approaches for classifying sentiment at scale.</p><div class="tag-row"><span>NLTK</span><span>Text preprocessing</span><span>NLP</span></div><button class="project-open" type="button" data-open-project="sentiment">Explore case study <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project-card reveal" data-category="analytics" data-project="climate">
+            <div class="project-art art-climate"><div class="climate-sun"></div><div class="climate-horizon"></div><div class="climate-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="climate-caption"><span>LONG-TERM TRENDS</span><b>Observe carefully.</b></div></div>
+            <div class="project-content"><div class="project-meta"><span>04 / ANALYTICS</span><span class="project-type">Exploratory analysis</span></div><h3>Climate Trend Notes</h3><p>Use time-series exploration and thoughtful visualisation to communicate changes across a chosen climate dataset.</p><div class="tag-row"><span>Time series</span><span>Matplotlib</span><span>Storytelling</span></div><button class="project-open" type="button" data-open-project="climate">Explore case study <span aria-hidden="true">↗</span></button></div>
+          </article>
+        </div>
+        <p class="project-disclaimer">Project cards are starter examples. Replace them with your own work and add links to your notebooks, repositories, and live demos.</p>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section toolkit-section" id="toolkit" aria-labelledby="toolkitTitle">
+      <div class="toolkit-intro reveal"><span class="section-kicker">MY TOOLKIT</span><h2 id="toolkitTitle">Tools are useful.<br/><span class="serif-accent">Thinking is essential.</span></h2><p class="section-lead">A growing toolkit for moving from raw datasets to useful, responsible insights.</p><div class="toolkit-note"><span>✳</span><p>My focus is on understanding <em>why</em> a technique fits the problem — not just which library to import.</p></div></div>
+      <div class="toolkit-panels reveal">
+        <div class="toolkit-panel"><div class="toolkit-panel-top"><span class="toolkit-number">01</span><h3>Analyse & explore</h3></div><p>Clean, query, investigate, and visualise data.</p><div class="tool-list"><span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div></div>
+        <div class="toolkit-panel"><div class="toolkit-panel-top"><span class="toolkit-number">02</span><h3>Model & evaluate</h3></div><p>Build baselines, compare methods, test assumptions.</p><div class="tool-list"><span>Scikit-learn</span><span>Regression</span><span>Classification</span><span>Feature engineering</span><span>Metrics</span></div></div>
+        <div class="toolkit-panel"><div class="toolkit-panel-top"><span class="toolkit-number">03</span><h3>Share & ship</h3></div><p>Make results reproducible, legible, and accessible.</p><div class="tool-list"><span>Jupyter</span><span>Git / GitHub</span><span>Power BI</span><span>Streamlit</span><span>Storytelling</span></div></div>
+      </div>
+    </section>
+
+    <section class="journey-band">
+      <div class="section-wrap journey-inner reveal"><div><span class="section-kicker">HOW I WORK</span><h2>Good analysis starts<br/>with <span class="serif-accent">good questions.</span></h2></div><div class="journey-steps"><div class="journey-step"><span>01</span><div><h3>Frame the question</h3><p>Define the problem, context, and success criteria.</p></div></div><div class="journey-step"><span>02</span><div><h3>Explore the evidence</h3><p>Check data quality, investigate patterns, and test assumptions.</p></div></div><div class="journey-step"><span>03</span><div><h3>Share what matters</h3><p>Explain the findings, limitations, and recommended next steps.</p></div></div></div></div>
+    </section>
+
+    <section class="section-wrap content-section contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="contact-card reveal"><div class="contact-decoration contact-decoration-one"></div><div class="contact-decoration contact-decoration-two"></div><div class="contact-content"><span class="section-kicker">LET’S CONNECT</span><h2 id="contactTitle">Have a question<br/>worth <span class="serif-accent">exploring?</span></h2><p>I’m always happy to connect with curious people, talk about data, or hear about opportunities to learn and contribute.</p><div class="contact-actions"><a class="button button-primary" id="emailLink" href="mailto:hello@example.com">Say hello <span aria-hidden="true">↗</span></a><a class="button button-outline" id="githubLink" href="#" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><button class="button button-outline" id="copyEmail" type="button">Copy email <span aria-hidden="true">▢</span></button></div><p class="contact-hint" id="copyStatus" aria-live="polite">Set your GitHub profile URL in script.js and add your résumé PDF to the assets folder.</p></div><div class="contact-side-note"><span class="side-note-star">✳</span><span>Open to<br/>what’s next.</span></div></div>
+      <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">ds<span>.</span></span><span class="brand-name">your<span>name</span></span></a><span>Designed with curiosity & a little lavender.</span><a href="#top" class="back-top">Back to top ↑</a><span class="copyright">© <span id="year"></span> Your Name</span></footer>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+    <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" tabindex="-1">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close project details">×</button>
+      <div class="modal-topline"><span class="section-kicker" id="modalKicker">CASE STUDY</span><span class="modal-count" id="modalCount">01 / 04</span></div>
+      <h2 id="modalTitle">Project title</h2><p class="modal-description" id="modalDescription"></p>
+      <div class="modal-detail-grid"><div><span class="modal-label">THE QUESTION</span><p id="modalProblem"></p></div><div><span class="modal-label">APPROACH</span><p id="modalApproach"></p></div><div><span class="modal-label">TOOLS</span><div class="tag-row" id="modalTools"></div></div><div><span class="modal-label">WHAT TO ADD</span><p id="modalOutcome"></p></div></div>
+      <div class="modal-footer"><span class="modal-template-note">Template case study — edit this content in <code>script.js</code>.</span><button class="button button-primary" id="modalDone" type="button">Got it <span aria-hidden="true">✓</span></button></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
