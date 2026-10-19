@@ -9,7 +9,7 @@ const PROFILE = {
   // Add your personal GitHub profile URL, e.g. 'https://github.com/yourusername'.
   githubUrl: 'https://github.com/drew-1009',
   // Put your actual PDF in assets/resume.pdf, then set this path.
-  resumePath: '/Users/dhruvnair/Documents/openai portfolio 2/assets/Dhruv_Nair_Resume.pdf',
+  resumePath: 'https://github.com/drew-1009/portfolio/blob/main/Dhruv_.pdf',
 };
 
 const projectDetails = {
